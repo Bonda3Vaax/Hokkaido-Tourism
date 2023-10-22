@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css?family=Trirong');
+
+:root{
+    --background: #000000;
+    --light: rgb(255, 255, 255);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0%;
+    background-color: var(--light);
+    font-family: 'Trirong', arial, helvetica, sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    color: var(--light);
+    font-size: 5em;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+h3 {
+    font-size: 2.25em;
+}
+
+h4 {
+    font-size: 1.3em;
+    font-style: oblique;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+
+
+header {
+    background: var(--background);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background-image: url('../images/logo-white-on-transparent.png');
+    background-size: contain;
+    background-position: left;
+    background-position-x: 3rem;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+.hello {
+    color: var(--light);
+}
+
+.hello a:link {
+    color: var(--light);
+}
+
+.hello a:hover {
+    color: red;
+}
+
+
+.hello a:visited {
+    color: red;
+}
+
+.nav-check {
+    display: none;
+}
+
+.nav-check-label {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 3em;
+    height: 100%;
+}
+
+.nav-check-label span, 
+.nav-check-label span::before,
+.nav-check-label span::after {
+    display: block;
+    background: var(--light);
+    height: 0.25rem;
+    width: 2.5em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-check-label span::before,
+.nav-check-label span::after {
+    content: '';
+    position: absolute;
+} 
+
+.nav-check-label span::before {
+    bottom: 0.75rem;
+}
+
+.nav-check-label span::after {
+    top: 0.75rem;
+}
+
+nav {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    background: transparent;
+    width: 100%;
+    transform: scale(2,0);
+    transform-origin: top;
+    transition: transform 500ms ease-in-out;
+}
+
+nav ul {
+    margin-right: 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+nav a {
+    color: red;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: rgb(255, 180, 0);
+}
+
+/* without ~ is looking for a nav inside of nav check
+   with    ~ is looling for any proceeding sibling  */
+.nav-check:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-check:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out 300ms;
+}
+
+
+
+.hero {
+    /* filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); */
+    
+    height: 130vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    background-image: url('../images/hero1.jpg');
+    background-color: var(--background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+}
+
+
+
+
+
+.intro {
+    display: flex;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    padding: 5rem 20rem; 
+    font-size: 0.75em;
+    font-weight: 900;
+    font-style: oblique;
+}
+
+
+
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    padding: 1rem 1rem;
+    gap: 6rem;
+}
+
+.stay, .ski, .shop {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    width: 30rem;
+    height: 25rem;
+
+    background-color: white;
+    border-bottom: 5px solid rgb(0, 0, 0);
+    border-radius: 10%;
+}
+
+.stay-photo, .ski-photo, .shop-photo{
+    /* filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); */
+
+    width: 25rem;
+    height: 21rem;
+    padding: 5rem 5rem;
+    background-color: white;
+
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+
+    background-image: url('../images/stay2.jpg');
+    background-position: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+
+    border-right: 5px solid rgb(0, 0, 0);
+    border-radius: 10%;
+}
+
+.ski-photo {
+    background-image: url('../images/ski2.jpg');
+}
+
+.shop-photo {
+    background-image: url('../images/shop2.jpg');
+} 
+
+
+
+
+
+.onsens {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 7rem;
+    padding: 1rem 5rem;
+    width: 80%;
+}
+
+.onsens p {
+    font-style: oblique;
+    font-size: 1.1em;
+    text-align: justify;
+    text-align: center;
+}
+
+.onsens-photo {
+    width: 100%;
+    height: 20rem;
+    padding: 20rem 20rem;
+    background-color: white;
+
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+
+    background-image: url('../images/onsen.jpg');
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    
+    border-right: 5px solid rgb(0, 0, 0);
+    border-radius: 10%;
+}
+
+table {
+    font-size: 0.85em;
+    border-collapse: separate;
+    border-spacing: 1.5rem;
+    width: 100%;
+}
+
+th, td {
+    border: 1.5px solid #dddddd;
+    text-align: center;
+    padding: 1rem;
+}
+
+th {
+    background-color: #c7c6c6;
+}
+
+
+
+
+
+
+.top10 {  
+    padding: 1rem 20rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--light);
+}
+
+.top10 p {
+    font-style: oblique;
+    font-size: 1.1em;
+    text-align: justify;
+    text-align: center;
+}
+
+
+.flex-container ul {
+    
+    list-style-type: none;
+    column-count: 2;
+    column-gap: 5rem;
+    padding: 0rem 10rem;
+}
+
+.flex-container li {
+    list-style-type: decimal;
+    margin-bottom: 3rem;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+.contact-form {    
+    width: 40%;    
+    margin: auto;
+    padding-bottom: 2rem;
+    margin-top: 7rem;
+    font-size: small;
+} 
+
+label {
+    
+    text-align: center;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+input[type=submit] {
+    background-color: #ff0000;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(255, 180, 0);
+}
+
+
+
+
+
+footer {
+    display: flex; 
+    justify-content: space-around; 
+    background-color: #d3d1d1; 
+    padding: 5rem; 
+    gap: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.85em;
+}
+
